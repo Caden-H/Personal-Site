@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Caden Harris</title>
+    <title>Caden</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css">
@@ -10,14 +10,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,200&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <script src="script.js"></script>
 </head>
 <body>
+
+
     <div class="container">
-        <div class="top-container">
+        <div class="top-container" id="top">
             <h1 class="name">Caden Harris</h1>
             
 
@@ -58,7 +66,7 @@
             </div>
     
         </div>
-        <div class="bottom-container">
+        <div class="projects-container">
             
             <div class="project-grid" id="projects">
                 <a href="https://galaga.ccaden.me/">
@@ -77,19 +85,49 @@
                         </div>
                     </div>
                 </a>
-                <a href="https://recipes.ccaden.me/">
-                    <div class="project-card" style="background-image: url('images/')">
+                <a href="https://github.com/Caden-H/FitnessTrackingApp">
+                    <div class="project-card" style="background-image: url('images/project-fitness.png')">
                         <div class="project-card-content">
-                            <h3 class="project-card-title">Project Title</h3>
-                            <p class="project-card-description">Project description...</p>
+                            <h3 class="project-card-title">Fitness Tracker</h3>
+                            <p class="project-card-description">Flexible Android app for tracking and storing fitness progress.</p>
                         </div>
                     </div>
                 </a>
+                
             </div>
         <link rel="stylesheet" href="style.css">
     </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@material/top-app-bar@3.2.0/dist/mdc.topAppBar.min.js"></script>
+    
+    <footer>
+        <div class="footer-container">
+            <h4>Site designed by me using HTML, CSS, and JavaScript.</h4>
+            <p>© 2023 Caden Harris</p>
+
+            <div class="footer-icons">
+                <a href="mailto:cadenrharris@gmail.com" class="contact-card-link">
+                    <i class="material-icons contact-card-icon">email</i>
+                </a>
+
+                <a href="https://github.com/caden-h" class="contact-card-link">
+                    <i class="fa fa-github" style="font-size: 22px; padding-right: 0.4rem;"></i>
+                </a>
+
+                <a href="https://www.google.com/maps/place/Logan,+UT/" class="contact-card-link">
+                    <i class="material-icons contact-card-icon">location_on</i>
+                </a>
+                <a href="docs/CadenHarrisStandoutResume.pdf" class="contact-card-link">
+                    <i class="material-icons contact-card-icon">description</i>
+                </a>
+                <a href="#top" class="contact-card-link">
+                    <i class="material-icons contact-card-icon">arrow_upward</i>
+                </a>
+            </div>
+
+        </div>
+    </footer>
+                        
+
+
 </body>
 
 <script>

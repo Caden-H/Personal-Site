@@ -7,8 +7,10 @@ body {
   font-size: 16px;
   line-height: 1.5;
   margin: 0;
-  background-color: rgb(190, 202, 216);
+  background-color: rgb(0, 74, 97);
 }
+
+
 
 .container {
   width: 100%;
@@ -17,9 +19,7 @@ body {
 
 .top-container {
   background-color: #f0f0f0;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
   padding: 20px;
-  /* center everything */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -28,10 +28,12 @@ body {
   height: 100%;
 }
 
-.bottom-container {
+.projects-container {
   padding-bottom: 5rem;
   padding-top: 5rem;
   background-color: #e7e7e7;
+  
+  background-image: linear-gradient(to bottom, #f8f8f8, #bdbdbd);
 }
 
 .name {
@@ -51,7 +53,7 @@ body {
   left: 50%;
   transform: translateX(-50%);
   font-size: 2rem;
-  color: #ccc;
+  color: rgb(0, 74, 97);
 }
 
 h1 {
@@ -121,8 +123,7 @@ h2 {
 
 .section-title {
   font-size: 2rem;
-  font-weight: bold;
-  /* center it on the page */
+  font-weight: 500;
   margin-left: auto;
   margin-right: auto;
 }
@@ -141,12 +142,12 @@ h2 {
 
 
 .project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap: 2rem;
-    max-width: 70vw;
-    margin: 0 auto;
-    margin-bottom: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 2rem;
+  max-width: 70vw;
+  margin: 0 auto;
+  margin-bottom: auto;
 }
 
 .project-card {
@@ -205,4 +206,39 @@ h2 {
 .project-grid a {
   text-decoration: none;
   color: inherit;
+}
+
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  /* add a gradient top to bottom */
+  background-image: linear-gradient(to bottom, rgb(40, 101, 119), rgb(0, 74, 97));
+}
+
+.footer-container h4 {
+  padding: 1rem;
+  padding-top: 0;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.footer-container p {
+  margin-top: 0;
+  padding-top: 0;
+  font-weight: 100;
+  font-style: italic;
+
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0rem;
 }
