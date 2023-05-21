@@ -25,8 +25,8 @@
 <body>
 
 
-    <div class="container">
-        <div class="top-container" id="top">
+    <div class="container" id="top">
+        <div class="top-container">
             <h1 class="name">Caden Harris</h1>
             
 
@@ -67,9 +67,9 @@
             </div>
     
         </div>
-        <div class="projects-container">
+        <div class="projects-container" id="projects">
             
-            <div class="project-grid" id="projects">
+            <div class="project-grid">
                 <a href="https://galaga.ccaden.me/">
                     <div class="project-card" style="background-image: url('images/project-galaga.png')">
                         <div class="project-card-content">
@@ -94,6 +94,29 @@
                         </div>
                     </div>
                 </a>
+                <a href="https://github.com/Caden-H/Frappuccino-Store-Software">
+                    <div class="project-card" style="background-image: url('images/project-fraps.png')">
+                        <div class="project-card-content">
+                            <h3 class="project-card-title">Frappuccino Store Software</h3>
+                            <p class="project-card-description">Storefront and management web app to facilitate multiple aspects of a coffee shop.</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://github.com/Caden-H/Reptile-Tracker">
+                    <div class="project-card" style="background-image: url('images/project-reptiles.png')">
+                        <div class="project-card-content">
+                            <h3 class="project-card-title">Herpetoculturist App</h3>
+                            <p class="project-card-description">Reptile tracking software for managing feeding, scheduling, and husbandry records.</p>
+                        </div>
+                    </div>
+                </a>
+                <div class="project-card" style="background-image: url('images/project-discord.png')">
+                    <div class="project-card-content">
+                        <h3 class="project-card-title">Private Discord Bot</h3>
+                        <p class="project-card-description">Robust community management bot developed with Discord.py for private Discord servers.</p>
+                    </div>
+                </div>
+                
                 
             </div>
         <link rel="stylesheet" href="style.css">
@@ -119,7 +142,7 @@
                 <a href="docs/CadenHarrisStandoutResume.pdf" class="contact-card-link">
                     <i class="material-icons contact-card-icon">description</i>
                 </a>
-                <a href="#top" class="contact-card-link">
+                <a href="#top" class="contact-card-link" onclick="smoothScrollUp(event)">
                     <i class="material-icons contact-card-icon">arrow_upward</i>
                 </a>
             </div>
@@ -136,6 +159,11 @@
         event.preventDefault();
         const target = document.querySelector(event.target.hash);
         target.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function smoothScrollUp(event) {
+        event.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     const topContainer = document.querySelector('.top-container');
