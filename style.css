@@ -10,6 +10,9 @@ body {
   background-color: rgb(0, 74, 97);
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
 
 
 .container {
@@ -26,6 +29,47 @@ body {
   align-items: center;
   max-width: 100%;
   height: 100%;
+  position: relative;
+  z-index: 1;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+
+.top-container::before {
+  content: "func tion greet (visitor) console. log(` <-> Hello, ${visi tor}! `); } greet (); // Welcome to my portfolio site";
+  position: absolute;
+  top: -100;
+  left: -15vw;
+  font-size: 20vw;
+  font-weight: bold;
+  font-family: 'Flow Circular', cursive;
+  z-index: -1;
+  transition: opacity 0.5s ease-in-out;
+  padding-left: 5%;
+  /* animation: marquee 30s cubic-bezier(0.09, 0.003, 0.0515, 0.555) infinite ; */
+  line-height: 0.55;
+  
+  background: linear-gradient(to bottom right, rgba(0, 40, 53, 0.04), rgba(0, 40, 53, 0.05), rgba(255, 255, 255, 0.04), rgba(0, 40, 53, 0.05));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}
+
+
+
+@keyframes marquee {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
+  }
+}
+
+.top-container.fade-out::before {
+  opacity: 0;
 }
 
 .projects-container {
@@ -119,6 +163,12 @@ h2 {
   font-weight: 200;
   height: 100%;
   padding-bottom: 0.5rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .section-header {
+    padding-bottom: 1rem;
+  }
 }
 
 .section-title {
