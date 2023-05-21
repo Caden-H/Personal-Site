@@ -142,7 +142,6 @@
     const fadeOutPoint = topContainer.offsetHeight / 5;
 
     window.addEventListener('scroll', () => {
-        console.log(window.scrollY);
         if (window.scrollY > fadeOutPoint) {
             topContainer.classList.add('fade-out');
         } else {
