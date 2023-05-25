@@ -193,12 +193,12 @@ h2 {
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* adjust the minmax value as needed */
   grid-gap: 2rem;
   max-width: 70vw;
   margin: 0 auto;
   margin-bottom: auto;
-}
+} 
 
 .project-card {
   background-color: #fff;
@@ -212,6 +212,16 @@ h2 {
   background-position: center;
   height: 340px;
   transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+  max-width: 100%; /* add this property to prevent the cards from becoming too wide */
+}
+
+@media only screen and (max-width: 500px) {
+  .project-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  .project-card {
+    height: 300px;
+  }
 }
 
 .project-card:hover {
