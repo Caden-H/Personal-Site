@@ -147,7 +147,7 @@ main {
 
 h2 {
     font-size: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 
@@ -304,4 +304,81 @@ h2 {
   justify-content: center;
   align-items: center;
   margin-top: 0rem;
+}
+
+
+/* 
+
+Skills 
+
+*/
+
+.skills-container {
+  background-image: linear-gradient(to bottom, #242424, #222222);
+  color: #fff;
+  padding-top: 1rem;
+  padding-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+
+.skills-container .skills-icons {
+  /* list-style-type: none; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  z-index: 10;
+  padding-inline-start: 0%;
+  padding-bottom: 1rem;
+}
+
+.skills-container .skills-icons svg {
+  margin: 0.5rem;
+  width: 90px;
+}
+
+@media (max-width: 420px) {
+  .skills-container .skills-icons svg {
+    width: 70px;
+  }
+}
+
+.skills-container .skills-icons li {
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1rem;
+  margin: 1rem;
+}
+
+@media (max-width: 420px) {
+  .skills-container .skills-icons li {
+    margin: 1rem 0.75rem;
+  }
+}
+
+.skills-container .skills-icons li:hover svg {
+  filter: drop-shadow(0 0 50px rgba(255, 255, 255, 0.3));
+}
+
+.skills-container .skills-icons svg {
+  margin: 0.5rem;
+  width: 90px;
+  transition: filter 0.2s ease-in-out;
+}
+
+
+.skills-container .skills-icons li:hover {
+  transform: scale(1.1);
 }
