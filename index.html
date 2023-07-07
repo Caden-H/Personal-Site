@@ -17,6 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Flow+Circular&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    
 
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
@@ -25,6 +26,13 @@
     
 </head>
 <body>
+    <!-- SIDEBAR -->
+    <div class="sidebar sidebar--fixed">
+        <a href="#projects"><i class="fa fa-code"></i></a>
+        <a href="#work-experience"><i class="fa fa-briefcase"></i></a>
+        <a href="#skills"><i class="fa fa-cogs"></i></a>
+    </div>
+
     <div class="container" id="top">
         <div class="top-container">
             <h1 class="name">Caden Harris</h1>
@@ -51,23 +59,11 @@
                 </a>
 
             </div>
-
-            
-
-
-            <div class="section-header">
-                <h2 class="section-title">
-                    <a href="#projects" onclick="smoothScroll(event)">
-                        <i class="material-icons arrow-icon">keyboard_arrow_down</i>
-                        Projects
-                        <i class="material-icons arrow-icon">keyboard_arrow_down</i>
-                    </a>
-                </h2>
-                <!-- <hr class="divider"> -->
-            </div>
-    
         </div>
+        
         <div class="projects-container" id="projects">
+            
+            <h2>Projects</h2>
             
             <div class="project-grid">
                 <a href="https://galaga.ccaden.me/">
@@ -121,6 +117,40 @@
             </div>
         
         </div>
+
+        <section id="work-experience" class="work-section">
+            <h2>History</h2>
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="images/usu.png" alt="DAKCS company logo">
+                    </div>
+                    <div class="card-content">
+                        <h3>Computer Science BA - Utah State University</h3>
+                        <h5>2020 - Present</h5>
+                        <p>Pursuing a Computer Science degree from Utah State University with a 3.9 GPA, taking a variety of courses in Web Development, Advanced Algorithms, Mobile Application Development, Game Development, Programming Languages, and Software Engineering.</p>
+                        <div class="work-container">
+                        <!-- Existing work-container div goes here -->
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image">
+                        <img src="images/dakcs.webp" alt="DAKCS company logo">
+                    </div>
+                    <div class="card-content">
+                        <h3>Software Support Specialist - DAKCS Software</h3>
+                        <h5>June 2023 - Present</h5>
+                        <p>Technical support for DAKCS Software Systems / PDCflow, diagnosing software issues and resolving them through code modification and customer training. Utilized SQL, C#, and LINUX/UNIX operating systems knowledge to troubleshoot software-related problems.</p>
+                        <div class="work-container">
+                        <!-- Existing work-container div goes here -->
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+        
 
         <div id="skills" class="skills-container">
             <h2>Technical Skills</h3>
@@ -312,6 +342,26 @@
 </body>
 
 <script>
+    const links = document.querySelectorAll('.sidebar a');
+
+    links.forEach(link => {
+    link.addEventListener('click', e => {
+        e.preventDefault();
+        const href = link.getAttribute('href');
+        const target = document.querySelector(href);
+        const offsetTop = target.offsetTop;
+
+        window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+        });
+    });
+    });
+
+
+    
+
+
     function smoothScroll(event) {
         event.preventDefault();
         const target = document.querySelector(event.target.hash);
@@ -331,6 +381,17 @@
             topContainer.classList.add('fade-out');
         } else {
             topContainer.classList.remove('fade-out');
+        }
+    });
+
+
+    const sidebar = document.querySelector('.sidebar');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 0) {
+        sidebar.classList.remove('sidebar--fixed');
+        } else {
+        sidebar.classList.add('sidebar--fixed');
         }
     });
 
