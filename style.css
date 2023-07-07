@@ -465,6 +465,33 @@ Work
     flex-wrap: wrap;
     justify-content: space-between;
   }
+
+
+
+  .sidebar {
+    position: fixed;
+    bottom: -30%;
+    left: 50%;
+    transform: translateX(-50%);
+    flex-direction: row;
+    border-radius: 0;
+    box-shadow: none;
+    margin-left: 0px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .sidebar--fixed {
+    position: fixed;
+    bottom: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    flex-direction: row;
+    border-radius: 0;
+    box-shadow: none;
+  
+    margin-left: 0px; /* Add margin */
+  }
+
 }
 
 /* .card-container {
