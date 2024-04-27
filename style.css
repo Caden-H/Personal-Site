@@ -18,6 +18,11 @@ body::-webkit-scrollbar {
 
 
 .sidebar {
+  background-color: #F8F8FF;
+  /* rounded */
+  border-radius: 100px;
+  padding: 8px;
+  height: fit-content;
   position: fixed;
   top: 50%;
   left: 20px; /* Change to left */
@@ -29,19 +34,40 @@ body::-webkit-scrollbar {
   z-index: 1000;
   margin-left: 20px; /* Add margin */
   transition: all 0.3s ease-in-out;
+  /* drop dhsadow */
+  box-shadow: -1px 1px 20px rgba(0, 0, 0, 0.05);
 }
 
 .sidebar--fixed {
   position: fixed;
-  top: 60%;
+  top: 65%;
   left: 50%;
   transform: translateX(-50%);
   flex-direction: row;
-  border-radius: 0;
+  border-radius: 100px;
   box-shadow: none;
 
   margin-left: 0px; /* Add margin */
 }
+
+/* when on mobile, sidebar should be lower */
+@media only screen and (max-width: 900px) {
+  .sidebar {
+    opacity: 0;
+    border-radius: 100px;
+    
+    top: 80%;
+  }
+
+  .sidebar--fixed {
+    border-radius: 100px;
+    opacity: 1;
+    top: 80%;
+    transform: translateX(0%);
+    /* fade when  */
+  }
+}
+
 
 .sidebar--fixed a {
   width: auto;
@@ -56,9 +82,9 @@ body::-webkit-scrollbar {
   align-items: center;
   width: 4rem;
   height: 4rem;
-  background-color: #fff;
+  background-color: #F8F8FF;
   border-radius: 50%;
-  box-shadow: -1px 1px 20px rgba(0, 0, 0, 0.11);
+  box-shadow: -1px 1px 20px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease-in-out;
   
   text-decoration: none; /* Add this line */
@@ -474,7 +500,6 @@ Work
     left: 50%;
     transform: translateX(-50%);
     flex-direction: row;
-    border-radius: 0;
     box-shadow: none;
     margin-left: 0px;
     transition: all 0.3s ease-in-out;
@@ -486,7 +511,6 @@ Work
     left: 50%;
     transform: translateX(-50%);
     flex-direction: row;
-    border-radius: 0;
     box-shadow: none;
   
     margin-left: 0px; /* Add margin */
