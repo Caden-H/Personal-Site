@@ -1,5 +1,5 @@
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -16,25 +16,22 @@ body::-webkit-scrollbar {
 
 /* Sidebar */
 
-
 .sidebar {
-  background-color: #F8F8FF;
-  /* rounded */
+  background-color: #f8f8ff;
   border-radius: 100px;
   padding: 8px;
   height: fit-content;
   position: fixed;
   top: 50%;
-  left: 20px; /* Change to left */
+  left: 20px;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
   z-index: 1000;
-  margin-left: 20px; /* Add margin */
+  margin-left: 20px;
   transition: all 0.3s ease-in-out;
-  /* drop dhsadow */
   box-shadow: -1px 1px 20px rgba(0, 0, 0, 0.05);
 }
 
@@ -47,7 +44,7 @@ body::-webkit-scrollbar {
   border-radius: 100px;
   box-shadow: none;
 
-  margin-left: 0px; /* Add margin */
+  margin-left: 0px;
 }
 
 /* when on mobile, sidebar should be lower */
@@ -55,7 +52,7 @@ body::-webkit-scrollbar {
   .sidebar {
     opacity: 0;
     border-radius: 100px;
-    
+
     top: 80%;
   }
 
@@ -67,7 +64,6 @@ body::-webkit-scrollbar {
     /* fade when  */
   }
 }
-
 
 .sidebar--fixed a {
   width: auto;
@@ -82,12 +78,12 @@ body::-webkit-scrollbar {
   align-items: center;
   width: 4rem;
   height: 4rem;
-  background-color: #F8F8FF;
+  background-color: #f8f8ff;
   border-radius: 50%;
   box-shadow: -1px 1px 20px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease-in-out;
-  
-  text-decoration: none; /* Add this line */
+
+  text-decoration: none;
 }
 
 .sidebar a:hover {
@@ -98,10 +94,6 @@ body::-webkit-scrollbar {
   font-size: 24px;
   color: #000;
 }
-
-
-
-
 
 .container {
   width: 100%;
@@ -123,36 +115,37 @@ body::-webkit-scrollbar {
   overflow-y: hidden;
 }
 
-
 .top-container::before {
-  content: "func tion greet (visitor) console. log(` <-> Hello, ${visi tor}! `); } greet (); // Welcome to my portfolio site";
+  content: "func tion greet (visi tor) console. log(` <-> Hello, ${visi tor}! `); } greet ();// Welcome to my portfolio site";
   position: absolute;
   top: -100;
   left: -15vw;
   font-size: 20vw;
   font-weight: bold;
-  font-family: 'Flow Circular', cursive;
+  font-family: "Flow Circular", cursive;
   z-index: -1;
   transition: opacity 0.5s ease-in-out;
   padding-left: 5%;
-  /* animation: marquee 30s cubic-bezier(0.09, 0.003, 0.0515, 0.555) infinite ; */
+  animation: marquee 60s cubic-bezier(0.09, 0.003, 0.0515, 0.555) infinite;
   line-height: 0.55;
-  
-  background: linear-gradient(to bottom right, rgba(0, 40, 53, 0.04), rgba(0, 40, 53, 0.05), rgba(255, 255, 255, 0.04), rgba(0, 40, 53, 0.05));
+
+  background: linear-gradient(
+    to bottom right,
+    rgba(0, 40, 53, 0.04),
+    rgba(0, 40, 53, 0.08),
+    rgba(255, 255, 255, 0.04),
+    rgba(0, 40, 53, 0.08)
+  );
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-
 }
-
-
-
 @keyframes marquee {
   0% {
-    transform: translate(0, 0);
+    transform: translateX(0);
   }
   100% {
-    transform: translate(-100%, 0);
+    transform: translateX(-30%);
   }
 }
 
@@ -167,10 +160,9 @@ body::-webkit-scrollbar {
   align-items: center;
   padding-bottom: 5rem;
   background-color: #e7e7e7;
-  
+
   background-image: linear-gradient(to bottom, #f8f8f8, #bdbdbd);
 }
-
 
 .name {
   font-size: 3rem;
@@ -183,7 +175,7 @@ body::-webkit-scrollbar {
 }
 
 .name::after {
-  content: '. . .';
+  content: ". . .";
   position: absolute;
   bottom: -1.5rem;
   left: 50%;
@@ -193,8 +185,8 @@ body::-webkit-scrollbar {
 }
 
 h1 {
-    font-size: 3rem;
-    margin-bottom: 2rem;
+  font-size: 3rem;
+  margin-bottom: 2rem;
 }
 
 .contact-card-link {
@@ -210,37 +202,37 @@ h1 {
 }
 
 .button-row {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
 }
 
 .button-row a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 48px;
-    height: 48px;
-    margin-right: 1rem;
-    border-radius: 50%;
-    background-color: #000000;
-    color: #fff;
-    text-decoration: none;
-    font-size: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin-right: 1rem;
+  border-radius: 50%;
+  background-color: #000000;
+  color: #fff;
+  text-decoration: none;
+  font-size: 24px;
 }
 
 .button-row a:hover {
-    background-color: rgb(190, 202, 216);
+  background-color: rgb(190, 202, 216);
 }
 
 main {
-    text-align: center;
+  text-align: center;
 }
 
 h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    position: relative;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  position: relative;
 }
 
 h2::after {
@@ -253,7 +245,6 @@ h2::after {
   border-radius: 10px;
   background-color: #ffffffeb;
 }
-
 
 .projects-container h2::after {
   background-color: #000000eb;
@@ -298,16 +289,15 @@ h2::after {
   margin-left: 1rem;
 }
 
-
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* adjust the minmax value as needed */
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   grid-gap: 2rem;
   max-width: 70vw;
   margin: 0 auto;
   margin-bottom: auto;
   margin-top: 1.5rem;
-} 
+}
 
 .project-card {
   background-color: #fff;
@@ -320,8 +310,10 @@ h2::after {
   background-size: cover;
   background-position: center;
   height: 340px;
-  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
-  max-width: 100%; /* add this property to prevent the cards from becoming too wide */
+  transition:
+    box-shadow 0.3s ease-in-out,
+    transform 0.3s ease-in-out;
+  max-width: 100%;
 }
 
 @media only screen and (max-width: 500px) {
@@ -340,7 +332,11 @@ h2::after {
 
 .project-card-content {
   padding: rem;
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgb(0, 0, 0));
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgb(0, 0, 0)
+  );
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -366,17 +362,16 @@ h2::after {
 }
 
 .project-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    margin-bottom: 1rem;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 1rem;
 }
 
 .project-grid a {
   text-decoration: none;
   color: inherit;
 }
-
 
 .footer-container {
   display: flex;
@@ -386,8 +381,12 @@ h2::after {
   color: #fff;
   padding-top: 2rem;
   padding-bottom: 2rem;
-  /* add a gradient top to bottom */
-  background-image: linear-gradient(to bottom, rgb(40, 101, 119), rgb(0, 74, 97));
+  /* gradient background */
+  background-image: linear-gradient(
+    to bottom,
+    rgb(40, 101, 119),
+    rgb(0, 74, 97)
+  );
 }
 
 .footer-container h4 {
@@ -405,7 +404,6 @@ h2::after {
   padding-top: 0;
   font-weight: 100;
   font-style: italic;
-
 }
 
 .footer-icons {
@@ -429,8 +427,6 @@ Work
   background-color: #000000eb;
 }
 
-
-
 .work-experience {
   display: flex;
   flex-direction: column;
@@ -440,13 +436,20 @@ Work
 .card-container {
   padding-top: 1.5rem;
   color: #000;
-  
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 20px;
+  --card-gap: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
+  gap: var(--card-gap);
+  column-gap: var(--card-gap);
+  row-gap: var(--card-gap);
+  width: 100%;
+  max-width: 1300px;
+  align-items: start;
+  justify-items: stretch;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  box-sizing: border-box;
 }
-
 
 .card {
   display: flex;
@@ -454,14 +457,22 @@ Work
   background-color: #fff;
   border-radius: 10px;
   overflow: hidden;
-  width: 90%;
-  max-width: 800px;
+  width: 100%;
+  max-width: 100%;
   height: auto;
   transition: transform 0.3s ease-in-out;
   padding-right: 1rem;
   padding-left: 1rem;
-  margin: 1rem;
-  min-width: 400px;
+  margin: 0;
+}
+
+.card,
+.card * {
+  box-sizing: border-box;
+}
+
+.card--wide {
+  grid-column: 1 / -1;
 }
 
 .card:hover {
@@ -471,28 +482,14 @@ Work
 @media screen and (max-width: 868px) {
   .card {
     width: 100%;
-    margin:0rem;
-    margin-bottom: 1rem;
-    margin-left:1rem;
-    margin-right:1rem;
-
+    margin: 0 0 1rem 0;
   }
-  
+
   .card-container {
-    padding-top: 1.5rem;
-    color: #000;
-    
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 0px;
-    
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    grid-template-columns: 1fr;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
-
-
 
   .sidebar {
     position: fixed;
@@ -504,7 +501,7 @@ Work
     margin-left: 0px;
     transition: all 0.3s ease-in-out;
   }
-  
+
   .sidebar--fixed {
     position: fixed;
     bottom: 40%;
@@ -512,51 +509,75 @@ Work
     transform: translateX(-50%);
     flex-direction: row;
     box-shadow: none;
-  
-    margin-left: 0px; /* Add margin */
+
+    margin-left: 0px;
   }
-
 }
 
-/* .card-container {
-}
-
-
-.card {
-  display: flex;
-  flex-direction: row;
-  background-color: #fff;
-  border-radius: 10px;
-  overflow: hidden;
-  width: 90%;
-  max-width: 800px;
-  height: auto;
-  transition: transform 0.3s ease-in-out;
-  padding-right: 1rem;
-  padding-left: 1rem;
-  margin: 1rem;
-  min-width: 400px;
-  width: calc(50% - 10px);
-  margin-bottom: 20px;
-}
-
-@media screen and (max-width: 768px) {
+/* Mobile: place image to the left of title/date, body spans full width below */
+@media screen and (max-width: 600px) {
   .card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+    gap: 0.5rem var(--card-gap);
+    align-items: start;
     width: 100%;
+    padding: 2rem 1rem 0rem 1rem;
   }
-  
-  .card-container {
+
+  .card-content {
+    display: contents;
+  }
+
+  .card-image {
+    grid-column: 1;
+    grid-row: 1 / 2;
+    align-self: center;
+    padding: 0.25rem;
+    flex: none;
+  }
+
+  .card-image img {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+  }
+
+  .card-header {
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+    padding-left: 0.5rem;
+  }
+
+  .card-header h3 {
+    margin: 0 0 0.125rem 0;
+    line-height: 1.1;
+  }
+
+  .card-header h5 {
+    margin: 0;
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: #333;
+  }
+
+  .card-body {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    padding: 0.25rem 0.5rem 1rem 0.5rem;
+  }
+
+  .card--wide .card-image {
+    width: 80px;
   }
 }
-.card:hover {
-  transform: scale(1.01);
-} */
-
-
-
 .card-image {
-  width: 30%;
+  flex: 0 0 30%;
+  width: auto;
   background-color: #ffffff;
   display: flex;
   justify-content: center;
@@ -570,7 +591,8 @@ Work
 
 .card-content {
   padding: 2rem;
-  width: 70%;
+  flex: 1 1 auto;
+  width: auto;
 }
 
 .card-content h3 {
@@ -581,7 +603,7 @@ Work
 .card-content h5 {
   margin-top: 0;
   padding-top: 0rem;
-  color:#222222
+  color: #222222;
 }
 
 #work-experience {
@@ -597,7 +619,6 @@ Work
   z-index: 1;
   overflow: hidden;
 }
-
 
 /* 
 
@@ -618,7 +639,6 @@ Skills
   z-index: 1;
   overflow: hidden;
 }
-
 
 .skills-container .skills-icons {
   /* list-style-type: none; */
@@ -669,7 +689,6 @@ Skills
   width: 90px;
   transition: filter 0.2s ease-in-out;
 }
-
 
 .skills-container .skills-icons li:hover {
   transform: scale(1.1);
