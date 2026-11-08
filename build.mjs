@@ -11,61 +11,33 @@ const a = (l) => `<a href="${esc(l.url)}"${ext(l.url) ? ' target="_blank" rel="n
 function rng(seed) { let t = seed >>> 0; return () => { t += 0x6d2b79f5; let r = Math.imul(t ^ (t >>> 15), 1 | t); r ^= r + Math.imul(r ^ (r >>> 7), 61 | r); return ((r ^ (r >>> 14)) >>> 0) / 4294967296; }; }
 const n1 = (v) => v.toFixed(1);
 
-// Loose watercolor washes, a few tapered brush strokes rising from the bottom, and small dabs of colour.
-// Nothing here is a drawn plant; together the marks only suggest growth.
+// Cut-paper shapes on thin stems (circles, half-moons, ovals, lens leaves), with rough hand-cut edges,
+// plus a few faint paint specks. Simple forms that only suggest plants.
 function meadow() {
-  const W = 1440, H = 300, r = rng(17);
-  const washCols = ["#b7c3a3", "#c9d2b8", "#a9b796", "#e2bfae", "#d6dcc7"];
-  let washes = "";
-  for (let i = 0; i < 11; i++) {
-    const cx = (i / 10) * W + (r() - 0.5) * 120, rx = 150 + r() * 220, ry = 45 + r() * 70, cy = H - ry * 0.3 + r() * 20;
-    washes += `<ellipse cx="${n1(cx)}" cy="${n1(cy)}" rx="${n1(rx)}" ry="${n1(ry)}" fill="${washCols[(r() * washCols.length) | 0]}" opacity="${n1(0.32 + r() * 0.22)}"/>`;
+  const W = 1440, H = 360, r = rng(21);
+  const cols = ["#8a9d73", "#a9b796", "#d99a83", "#c9d2b8", "#c0674a", "#8a9d73"];
+  let shapes = "", stems = "", specks = "";
+  for (const x0 of [60, 150, 240, 320, 410, 1010, 1100, 1180, 1270, 1360, 700]) {
+    const x = x0 + (r() - 0.5) * 30, h = 110 + r() * 160, col = cols[(r() * cols.length) | 0], kind = (r() * 4) | 0, sz = 18 + r() * 20, y = H - h;
+    stems += `<path d="M${n1(x)} ${H} Q${n1(x + (r() - 0.5) * 24)} ${n1(H - h / 2)} ${n1(x)} ${n1(y)}"/>`;
+    if (kind === 0) shapes += `<circle cx="${n1(x)}" cy="${n1(y)}" r="${n1(sz)}" fill="${col}"/>`;
+    if (kind === 1) shapes += `<path d="M${n1(x - sz)} ${n1(y)} A${n1(sz)} ${n1(sz)} 0 0 1 ${n1(x + sz)} ${n1(y)}Z" fill="${col}"/>`;
+    if (kind === 2) shapes += `<ellipse cx="${n1(x)}" cy="${n1(y)}" rx="${n1(sz * 0.55)}" ry="${n1(sz * 1.2)}" fill="${col}" transform="rotate(${n1((r() - 0.5) * 30)} ${n1(x)} ${n1(y)})"/>`;
+    if (kind === 3) shapes += `<path d="M${n1(x)} ${n1(y - sz)} Q${n1(x + sz)} ${n1(y)} ${n1(x)} ${n1(y + sz)} Q${n1(x - sz)} ${n1(y)} ${n1(x)} ${n1(y - sz)}Z" fill="${col}"/>`;
   }
-  // stroke clusters: dense at the edges, sparse in the middle
-  const clusters = [[140, 260, 9], [600, 160, 2], [900, 140, 3], [1270, 260, 10]];
-  const strokeCols = ["#5c7646", "#6f8656", "#7d9367", "#8a9d73"];
-  let strokes = "", dabs = "";
-  for (const [cx, spread, n] of clusters) {
-    for (let i = 0; i < n; i++) {
-      const x = cx + (r() - 0.5) * spread, h = 45 + r() * 120, w = 5 + r() * 9, lean = (r() - 0.5) * 120;
-      const tx = x + lean, ty = H - h, mx = x + lean * 0.25, my = H - h * 0.55;
-      strokes += `<path d="M${n1(x - w)} ${H} Q${n1(mx - w * 0.6)} ${n1(my)} ${n1(tx)} ${n1(ty)} Q${n1(mx + w * 0.6)} ${n1(my)} ${n1(x + w)} ${H} Z" fill="${strokeCols[(r() * 4) | 0]}" opacity="${n1(0.16 + r() * 0.22)}"/>`;
-      if (r() < 0.45) {
-        const col = r() < 0.6 ? "#c0674a" : "#d99a83";
-        dabs += `<ellipse cx="${n1(tx + (r() - 0.5) * 6)}" cy="${n1(ty + 2)}" rx="${n1(6 + r() * 9)}" ry="${n1(5 + r() * 6)}" transform="rotate(${n1(r() * 180)} ${n1(tx)} ${n1(ty)})" fill="${col}" opacity="${n1(0.3 + r() * 0.25)}"/>`;
-      }
-    }
-  }
-  // whimsy: a few curling tendrils that end in a loop, seeds drifting up, and small open rings
-  let tendrils = "", seeds = "";
-  for (const [x0, dir] of [[70, 1], [330, -1], [700, 1], [1060, -1], [1380, -1]]) {
-    const h = 90 + r() * 70, sway = dir * (30 + r() * 30);
-    const tx = x0 + sway, ty = H - h, lr = 7 + r() * 6;
-    tendrils += `<path d="M${x0} ${H} C${n1(x0 - sway * 0.4)} ${n1(H - h * 0.4)} ${n1(x0 + sway * 1.3)} ${n1(H - h * 0.75)} ${n1(tx)} ${n1(ty)} c${n1(dir * lr)} ${n1(-lr)} ${n1(dir * lr * 2)} ${n1(lr * 0.6)} ${n1(dir * lr * 0.8)} ${n1(lr * 1.5)} c${n1(-dir * lr * 0.9)} ${n1(lr * 0.4)} ${n1(-dir * lr * 1.2)} ${n1(-lr * 0.6)} ${n1(-dir * lr * 0.3)} ${n1(-lr * 0.9)}"/>`;
-  }
-  for (let i = 0; i < 14; i++) {
-    const side = i % 2 ? 1 : 0, x = side ? 1000 + r() * 420 : 20 + r() * 420, y = 125 + r() * 110, rad = 1.6 + r() * 2.6;
-    seeds += r() < 0.35
-      ? `<circle cx="${n1(x)}" cy="${n1(y)}" r="${n1(rad + 2.5)}" fill="none" stroke="#c0674a" stroke-width="1.1" opacity="${n1(0.25 + r() * 0.2)}"/>`
-      : `<circle cx="${n1(x)}" cy="${n1(y)}" r="${n1(rad)}" fill="${r() < 0.5 ? "#d99a83" : "#8a9d73"}" opacity="${n1(0.25 + r() * 0.25)}"/>`;
+  for (let i = 0; i < 22; i++) {
+    const x = r() * W, y = 90 + r() * 230, rad = 1.2 + r() * 2.4;
+    specks += `<circle cx="${n1(x)}" cy="${n1(y)}" r="${n1(rad)}" fill="${r() < 0.5 ? "#d99a83" : "#8a9d73"}" opacity="${n1(0.18 + r() * 0.2)}"/>`;
   }
   return `<svg class="meadow" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
   <defs>
-    <filter id="wash" x="-20%" y="-40%" width="140%" height="180%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.011" numOctaves="3" seed="8" result="n"/>
-      <feDisplacementMap in="SourceGraphic" in2="n" scale="46" xChannelSelector="R" yChannelSelector="G" result="d"/>
-      <feGaussianBlur in="d" stdDeviation="7"/>
-    </filter>
-    <filter id="brush" x="-10%" y="-10%" width="120%" height="120%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.06" numOctaves="2" seed="3" result="n"/>
-      <feDisplacementMap in="SourceGraphic" in2="n" scale="6" xChannelSelector="R" yChannelSelector="G" result="d"/>
-      <feGaussianBlur in="d" stdDeviation="0.8"/>
+    <filter id="cut" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" seed="7" result="t"/>
+      <feDisplacementMap in="SourceGraphic" in2="t" scale="4" xChannelSelector="R" yChannelSelector="G"/>
     </filter>
   </defs>
-  <g filter="url(#wash)" style="mix-blend-mode:multiply">${washes}</g>
-  <g filter="url(#brush)" style="mix-blend-mode:multiply">${strokes}${dabs}</g>
-  <g filter="url(#brush)" fill="none" stroke="#6f8656" stroke-width="2.2" stroke-linecap="round" opacity=".32">${tendrils}</g>
-  <g>${seeds}</g>
+  <g filter="url(#cut)"><g fill="none" stroke="#8a9d73" stroke-width="2" opacity=".45">${stems}</g><g opacity=".55" style="mix-blend-mode:multiply">${shapes}</g></g>
+  <g filter="url(#cut)">${specks}</g>
 </svg>`;
 }
 
@@ -211,9 +183,11 @@ h2 { margin: 0; font: 400 30px/1.15 var(--display); }
 .f-cols { display: flex; gap: 56px; }
 .f-cols a { color: var(--ink); }
 .mail { display: table; margin-top: 14px; font: 400 15px/1.4 var(--mono); }
-.garden { position: relative; height: 300px; overflow: hidden; margin-top: 8px; -webkit-mask-image: linear-gradient(transparent, #000 45%); mask-image: linear-gradient(transparent, #000 45%); }
-.meadow { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 300px; display: block; }
-.f-credit { position: absolute; left: 0; right: 0; bottom: 16px; }
+.garden { position: relative; height: 360px; overflow: hidden; margin-top: 8px; }
+.meadow { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 360px; display: block; }
+/* the bottom of the page turns back into plain, rougher paper */
+.garden::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 55%; pointer-events: none; background: linear-gradient(rgba(232,233,222,0), rgba(232,233,222,.55) 55%, rgba(232,233,222,.85)), ${noise(".55", 3, ".22", 9, 260)}; -webkit-mask-image: linear-gradient(transparent, #000 60%); mask-image: linear-gradient(transparent, #000 60%); }
+.f-credit { position: absolute; left: 0; right: 0; bottom: 16px; z-index: 1; }
 .f-credit .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font: 400 12.5px/1.4 var(--mono); color: var(--ink); opacity: .75; }
 
 @media (max-width: 820px) {
@@ -231,6 +205,24 @@ h2 { margin: 0; font: 400 30px/1.15 var(--display); }
   .skills { grid-template-columns: 1fr; }
   .f-row { grid-template-columns: 1fr; }
   .f-cols { gap: 40px; }
+}
+@media (max-width: 560px) {
+  .lede { font-size: 17px; }
+  h2 { font-size: 27px; }
+  .shead .label { display: none; }
+  .job { padding: 14px 16px; }
+  .job h3 { font-size: 19.5px; }
+  .card { max-width: none; }
+  /* compact project cards: thumbnail on the left, text on the right */
+  .projects { gap: 12px; }
+  .proj { display: grid; grid-template-columns: 104px minmax(0, 1fr); align-items: start; }
+  .proj figure { margin: 10px 0 10px 10px; aspect-ratio: 1 / 1; }
+  .proj .body { padding: 9px 12px 12px; }
+  .proj .meta { flex-wrap: wrap; }
+  .proj h3 { font-size: 17px; }
+  .proj p { font-size: 14px; }
+  .garden { height: 240px; }
+  .meadow { width: 960px; height: 240px; left: -30px; right: auto; }
 }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } .job:hover, .proj:hover, .card:hover, .proj:hover img { transform: none; } }
 `;
