@@ -1,0 +1,283 @@
+{
+  "name": "Caden Harris",
+  "role": "Software developer",
+  "intro": "Software developer who builds web applications end to end, from the database to the interface. I've worked on new products and long-running platforms in PHP, Laravel, and TypeScript, and I care about software that stays easy to use and easy to change.",
+  "email": "contact@caden.work",
+  "links": [
+    {
+      "label": "GitHub",
+      "url": "https://github.com/Caden-H"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/caden-harris"
+    },
+    {
+      "label": "Resume (PDF)",
+      "url": "/docs/Caden-Harris-Resume.pdf"
+    }
+  ],
+  "experience": [
+    {
+      "role": "Software Developer",
+      "org": "iWorQ Systems",
+      "place": "Logan, UT",
+      "start": "2025",
+      "end": "Now",
+      "points": [
+        "Build a large share of SmartXEO, a new Laravel and Livewire CMS and site builder for small towns, working across the whole product. SmartXEO also offers an AI-powered search bar that towns can embed in their existing websites.",
+        "Build features and fix bugs across the modules of a large PHP platform for permits, licensing, and code enforcement.",
+        "Work with Product, QA, and Support to scope new features and track down bugs."
+      ],
+      "logo": "logos/iworq.png"
+    },
+    {
+      "role": "Software Support Specialist",
+      "org": "DAKCS Software Systems and PDCflow",
+      "place": "Remote",
+      "start": "2023",
+      "end": "2025",
+      "points": [
+        "Provided remote technical support for a legacy collections software suite, resolving 30+ tickets a week by tracing bugs through IMS BASIC, C#, and Python code and finding bad data with SQL.",
+        "Wrote troubleshooting guides and led remote training for new and existing customers."
+      ],
+      "logo": "logos/dakcs.png"
+    }
+  ],
+  "projects": [
+    {
+      "title": "Bubble Defender",
+      "year": "2025",
+      "summary": "Browser game built in a weekend. Won Best Video Game at the USU Game Jam 2025. Built with Grant Nelson.",
+      "tags": [
+        "JavaScript",
+        "PixiJS",
+        "Vite"
+      ],
+      "links": [
+        {
+          "label": "Play",
+          "url": "https://bubble.caden.work"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/Caden-H/BubbleGame"
+        }
+      ],
+      "image": "img/bubble.jpg",
+      "alt": "Bubble Defender gameplay: a plant in a bubble, with fish attacking",
+      "focus": "50% 50%"
+    },
+    {
+      "title": "SaboTanks",
+      "year": "2025",
+      "summary": "Local multiplayer tank game. Second place in game development at HackUSU 2025. Team of four.",
+      "tags": [
+        "TypeScript",
+        "PixiJS",
+        "Vite"
+      ],
+      "links": [
+        {
+          "label": "Play",
+          "url": "https://tanks.caden.work"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/Caden-H/HackUSU2025"
+        }
+      ],
+      "image": "img/sabotanks.jpg",
+      "alt": "SaboTanks gameplay: two tanks on a dark arena",
+      "focus": "50% 50%"
+    },
+    {
+      "title": "Steam Local Game Sync",
+      "year": "2024",
+      "summary": "Python tool that adds non-Steam games to a Steam library, picks the right executable, and fetches cover art. I contributed a GUI mode, multi-folder search, and selective sync.",
+      "tags": [
+        "Python",
+        "Windows"
+      ],
+      "links": [
+        {
+          "label": "Code",
+          "url": "https://github.com/Caden-H/SteamLocalGameSync"
+        }
+      ],
+      "image": "img/steam-sync.jpg",
+      "alt": "Steam Local Game Sync settings window",
+      "focus": "50% 50%"
+    },
+    {
+      "title": "Reptile Tracker",
+      "year": "2023",
+      "summary": "Records app for reptile keepers: feedings, schedules, and husbandry measurements for each animal.",
+      "tags": [
+        "Web app"
+      ],
+      "links": [],
+      "image": "img/reptiles.jpg",
+      "alt": "Reptile Tracker page with reptile details, feedings, and husbandry records",
+      "focus": "50% 0%"
+    },
+    {
+      "title": "Fitness Tracker",
+      "year": "2023",
+      "summary": "Native Android app for tracking daily exercise counts and body weight, with a history chart. Built with Kotlin and Firebase.",
+      "tags": [
+        "Kotlin",
+        "Android",
+        "Firebase"
+      ],
+      "links": [
+        {
+          "label": "Code",
+          "url": "https://github.com/Caden-H/FitnessTrackingApp"
+        }
+      ],
+      "image": "img/fitness.jpg",
+      "alt": "Three screens of the Android fitness app: daily count, history chart, weight log",
+      "focus": "50% 50%"
+    },
+    {
+      "title": "Galaga",
+      "year": "2023",
+      "summary": "A recreation of the arcade classic, built with Kollin Murphy.",
+      "tags": [
+        "TypeScript",
+        "Canvas"
+      ],
+      "links": [
+        {
+          "label": "Code",
+          "url": "https://github.com/Caden-H/Galaga"
+        }
+      ],
+      "image": "img/galaga.jpg",
+      "alt": "Galaga recreation in play, enemy formation above the player ship",
+      "focus": "50% 0%"
+    },
+    {
+      "title": "Recipe Sharing Site",
+      "year": "2022",
+      "summary": "Recipe catalog that turns photos of cookbook pages into recipes you can search, tag, and share online.",
+      "tags": [
+        "Web app"
+      ],
+      "links": [],
+      "image": "img/recipes.jpg",
+      "alt": "Recipe Sharing Site: a grid of recipe cards with photos and tags",
+      "focus": "50% 0%"
+    },
+    {
+      "title": "Frappuccino Store",
+      "year": "2022",
+      "summary": "Storefront and management web app for a coffee shop, with ordering, payroll, and inventory. Built by a team of four in sprints, with standups and retrospectives.",
+      "tags": [
+        "TypeScript",
+        "Astro",
+        "Tailwind"
+      ],
+      "links": [
+        {
+          "label": "Code",
+          "url": "https://github.com/Caden-H/Frappuccino-Store-Software"
+        }
+      ],
+      "image": "img/frappuccino.jpg",
+      "alt": "Frappuccino Store manager page with payroll and inventory tables",
+      "focus": "0% 0%"
+    }
+  ],
+  "education": {
+    "degree": "B.S. Computer Science",
+    "school": "Utah State University",
+    "start": "2020",
+    "end": "2024",
+    "logo": "logos/usu.png",
+    "points": [
+      "Graduated May 2024. GPA 3.96, Summa Cum Laude.",
+      "Courses in web development, advanced algorithms, mobile app development, game development, data science, programming languages, and software engineering."
+    ]
+  },
+  "skills": [],
+  "available": {
+    "stamp": "Open to work",
+    "showStamp": true,
+    "rows": [
+      [
+        "Now",
+        "Software Developer, iWorQ Systems"
+      ],
+      [
+        "Focus",
+        "Full-stack web: PHP, Laravel, TypeScript, SQL"
+      ],
+      [
+        "Education",
+        "B.S. Computer Science, Utah State, 2024"
+      ],
+      [
+        "GPA",
+        "3.96, Summa Cum Laude"
+      ]
+    ]
+  },
+  "skillGroups": [
+    [
+      "Languages",
+      [
+        "PHP",
+        "TypeScript",
+        "JavaScript",
+        "Python",
+        "SQL",
+        "C#",
+        "Java",
+        "Kotlin",
+        "Dart",
+        "HTML",
+        "CSS"
+      ]
+    ],
+    [
+      "Frameworks",
+      [
+        "Laravel",
+        "Livewire",
+        "React",
+        "Vue",
+        "Astro",
+        "Node.js",
+        "jQuery",
+        "Tailwind",
+        "Bootstrap"
+      ]
+    ],
+    [
+      "Data and infrastructure",
+      [
+        "MySQL",
+        "PostgreSQL",
+        "Firebase",
+        "AWS",
+        "Docker",
+        "Linux",
+        "Git"
+      ]
+    ],
+    [
+      "Design",
+      [
+        "Photoshop",
+        "Illustrator",
+        "Premiere Pro"
+      ]
+    ]
+  ],
+  "footer": {
+    "style": "c",
+    "heading": "Get in touch"
+  }
+}
