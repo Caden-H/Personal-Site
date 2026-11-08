@@ -25,9 +25,9 @@
       "start": "2025",
       "end": "Now",
       "points": [
-        "Build a large share of SmartXEO, a new Laravel and Livewire CMS and site builder for small towns, working across the whole product. SmartXEO also offers an AI-powered search bar that towns can embed in their existing websites.",
-        "Build features and fix bugs across the modules of a large PHP platform for permits, licensing, and code enforcement.",
-        "Work with Product, QA, and Support to scope new features and track down bugs."
+        "Developed diverse features and fixed bugs across the modules of a large PHP platform for permits, licensing, and code enforcement.",
+        "Major contributions to a new Laravel and Livewire CMS and site builder for small towns, working across the whole product, including an AI-powered search bar that towns can embed onto existing websites.",
+        "Collaborated with Product, QA, and Support to scope new features and resolve bugs."
       ],
       "logo": "logos/iworq.png"
     },
@@ -48,7 +48,7 @@
     {
       "title": "Bubble Defender",
       "year": "2025",
-      "summary": "Browser game built in a weekend. Won Best Video Game at the USU Game Jam 2025. Built with Grant Nelson.",
+      "summary": "Browser game built in a weekend. Awarded Best Video Game at the USU Game Jam 2025.",
       "tags": [
         "JavaScript",
         "PixiJS",
@@ -94,7 +94,7 @@
     {
       "title": "Steam Local Game Sync",
       "year": "2024",
-      "summary": "Python tool that adds non-Steam games to a Steam library, picks the right executable, and fetches cover art. I contributed a GUI mode, multi-folder search, and selective sync.",
+      "summary": "Simple python tool that adds non-Steam games to a Steam library, picks the right executable, and fetches cover art. I contributed a GUI mode, multi-folder search, and selective sync.",
       "tags": [
         "Python",
         "Windows"
