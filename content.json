@@ -46,6 +46,25 @@
   ],
   "projects": [
     {
+      "title": "Wristrature",
+      "year": "2026",
+      "summary": "Standalone ebook reader for Wear OS. Browses your own OPDS library, syncs your place with KOReader, and lays text out for a round screen with a custom scrolling engine.",
+      "tags": [
+        "Kotlin",
+        "Jetpack Compose",
+        "Wear OS"
+      ],
+      "links": [
+        {
+          "label": "Code",
+          "url": "https://github.com/Caden-H/Wristrature"
+        }
+      ],
+      "image": "img/wristrature.jpg",
+      "alt": "Wristrature on a Pixel Watch: edge-hugging reading layout, the home screen and speed reading",
+      "focus": "50% 50%"
+    },
+    {
       "title": "Bubble Defender",
       "year": "2025",
       "summary": "Browser game built in a weekend. Awarded Best Video Game at the USU Game Jam 2025.",
